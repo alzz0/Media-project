@@ -1,0 +1,21 @@
+<% include ../partials/header%>
+
+<div class="container">
+    <div class="row">
+        <div style="width: 30%; margin: 25px auto;">
+            <div class="input-group input-group-lg">
+              <form method="POST" action="/show/<%=post._id%>/comment">
+               <input class="form-control"  aria-describedby="sizing-addon1" type="text" name="comment[author]" placeholder="author">
+                <textarea class="form-control" aria-describedby="sizing-addon1" type="text" name="comment[content]" placeholder="content"></textarea>
+                 <button class="btn btn-success">Submit</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+             </form> 
+     
+
+
+<% include ../partials/footer%>
+

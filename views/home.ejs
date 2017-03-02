@@ -1,0 +1,24 @@
+<% include partials/header%>
+
+<div class="container">
+    <div class="page-header">
+      <h1>POSTS</h1>
+    </div>
+    
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        
+    <% post.forEach(function(show){ %>
+      <div class="col-md-4 col-sm-6">
+         <a href="/show/<%=show._id%>"> <%=show.subject.substring(0,40)%></a>
+          <div class="thumbnail">
+            <img src="<%=show.image%>">
+                <div class="caption">
+                    <%=show.body.substring(0,40);%> ...
+                </div>
+          </div>
+      </div>
+     <% }) %>
+    </div>
+</div>  
+    
+<% include partials/footer%>

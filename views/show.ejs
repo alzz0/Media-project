@@ -1,0 +1,27 @@
+<% include partials/header%>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+         <div class="thumbnail">
+          <h1><%=postP.subject%></h1>
+            <img src="<%=postP.image%>">
+              <form method="POST" action="/show/<%=postP._id%>/delete/?_method=DELETE">
+                <button class="btn btn-danger">Delete</button>
+              </form>
+            <p><%=postP.body%></p>
+        </div>
+  
+  <a class="btn btn-success" href="/show/<%=postP._id%>/comment/new">New comment</a>
+    <%postP.comments.forEach(function(comment){ %>
+      <div class="well">
+      <strong><%=comment.author%></strong>
+          <p><%=comment.content%></p>
+      </div>
+      <% }) %>
+  </div>
+ </div>
+</div>
+
+
+<% include partials/footer%>
